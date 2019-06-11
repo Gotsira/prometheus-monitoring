@@ -1,0 +1,11 @@
+global:
+  slack_api_url: 'https://hooks.slack.com/services/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'
+route:
+  receiver: 'alert-test'
+  group_by: [alertname, datacenter, app]
+receivers:
+- name: 'alert-test'
+  slack_configs:
+  - channel: '#general'
+    text: "summary: {{ .CommonAnnotations.summary }}\ndescription: {{ .CommonAnnotations.description }}"
+    
