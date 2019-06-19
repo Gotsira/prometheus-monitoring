@@ -4,7 +4,7 @@ groups:
 
  # Alert for any instance that is unreachable for >2 minutes.
   - alert: service_down
-    expr: up == 1
+    expr: http_request_duration_seconds_count{status_code="500"} == 2
     for: 15s
     labels:
       severity: page

@@ -36,4 +36,13 @@ services:
     command:
       - '--config.file=/etc/alertmanager/config.yml'
     restart: always
+  # grok_exporter:
+  #   image: palobo/grok_exporter
+  #   ports:
+  #     - 9144:9144
+  #   volumes:
+  #     - ./grok_exporter/config.yml:/etc/grok_exporter/config.yml
+  #   command:
+  #     - '--config.file=/etc/grok_exporter/config.yml'
+  #   restart: always
       

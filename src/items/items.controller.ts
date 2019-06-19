@@ -38,6 +38,11 @@ export class ItemsController {
     return this.itemsService.delete(id);
   }
 
+  @Delete()
+  deleteAll(): Promise<Item> {
+    return this.itemsService.deleteAll();
+  }
+
   @Put(':id')
   update(@Body() updateItemDto: CreateItemDto, @Param('id') id): Promise<Item> {
       return this.itemsService.update(id, updateItemDto);
